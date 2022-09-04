@@ -1,0 +1,20 @@
+
+#+TITLE:  Evidencia De Estadística
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   2022-09-01
+
+#+options: toc:nil
+
+* Dataset Descargado
+[[./img/descargado.png]]
+
+* Bike Day
+[[./img/bike_day.png]]
+
+* Bike Hour
+[[./img/bike_hour.png]]
+
+* Voltajes
+[[./img/voltajes.png]]
+
+

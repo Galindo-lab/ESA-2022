@@ -1,0 +1,182 @@
+
+#+TITLE:  Notas De Estadistica
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   [2022-08-24 mié]
+
+
+* mié 24 ago 2022 13:28:16
+** Notas
+- [X] instalar weka
+- [X] UCI-library-dataset
+- [X] Reviar el classroom
+
+** TODO Parametros De Interes
+** TODO Propiedades De Los Estiamdores
+** TODO Valor Puntual
+\(\theta\) cualquier parametro estadistico (media moda mediana)
+
+una estimación puntual de un parámetro \(\theta\) es un numero único que puede ser considerado como un valor sensible de \(\theta\).
+
+** TODO Estimacion Por Intervalo
+** TODO Hipotesis
+** TODO Estimadores Insesgados
+* mié 31 ago 2022 12:08:37
+** Crear Archivos .arff
+#+BEGIN_SRC 
+% archivo de prueba Weca
+
+@relation prueba 
+@attribute nombre STRING
+@attribute ojo_izquierdo {Bien, Mal}
+@attribute dimension NUMERIC
+@ 
+#+END_SRC
+
+** Primer Archivo Arff
+#+BEGIN_tbl-voltajes
+#+name: tbl-voltajes
+| voltajes |
+|    24.46 |
+|    25.61 |
+|    26.25 |
+|    26.42 |
+|    26.66 |
+|    27.15 |
+|    27.31 |
+|    27.54 |
+|    27.74 |
+|    27.94 |
+|    27.98 |
+|    28.04 |
+|    28.28 |
+|    28.49 |
+|    28.50 |
+|    28.87 |
+|    29.11 |
+|    29.13 |
+|    29.50 |
+|    30.88 |
+#+END_tbl-voltajes
+#+BEGIN_SRC python :var vol=tbl-voltajes
+
+  arff = ""
+  atributos = vol.pop(0)
+
+  arff += "@relation prueba\n"
+
+  for e in atributos:
+      arff += "@attribute " + str(e) + " NUMERIC\n"
+
+  arff += "\n@data\n"
+
+  for e in vol:
+      arff += ",".join([str(n) for n in e]) + "\n"
+
+  return arff
+#+END_SRC
+
+#+RESULTS:
+[[file:./testuml.png]]
+
+** Voltajes 6.2
+| 24.46 | 25.61 | 26.25 | 26.42 | 26.66 | 27.15 |
+| 27.31 | 27.54 | 27.74 | 27.94 | 27.98 | 28.04 |
+| 28.28 | 28.49 | 28.50 | 28.87 | 29.11 | 29.13 |
+| 29.50 | 30.88 |       |       |       |       |
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+#+BEGIN_SRC ascii
+  % primer archivo .arfff
+  @attribute voltajes NUMERIC
+
+  @data
+  24.46
+  25.61
+  26.25
+  26.42
+  26.66
+  27.15
+  27.31
+  27.54
+  27.74
+  27.94
+  27.98
+  28.04
+  28.28
+  28.49
+  28.50
+  28.87
+  29.11
+  29.13
+  29.50
+  30.88
+#+END_SRC
+* jue 01 sep 2022 12:19:24
+** Dataset de la practica
+[[https://archive.ics.uci.edu/ml/datasets/Container+Crane+Controller+Data+Set][Container Crane Controller Data Set Data Set]]
+
+#+BEGIN_tbl
+#+name: tbl
+| Speed | Angle | Power |
+|     1 |    -5 | 0.3   |
+|     2 |     5 | 0.3   |
+|     3 |    -2 | 0.5   |
+|     1 |     2 | 0.5   |
+|     2 |     0 | 0.7   |
+|     6 |    -5 | 0.5   |
+|     7 |     5 | 0.5   |
+|     6 |    -2 | 0.3   |
+|     7 |     2 | 0.3   |
+|     6 |     0 | 0.7   |
+|     8 |    -5 | 0.5   |
+|     9 |     5 | 0.5   |
+|    10 |    -2 | 0.3   |
+|     8 |     2 | 0.3   |
+|     9 |     0 | 0.5   |
+#+END_tbl
+
+#+BEGIN_SRC python :var vol=tbl
+
+  arff = ""
+  atributos = vol.pop(0)
+
+  arff += "@relation prueba\n"
+
+  for e in atributos:
+      arff += "@attribute " + str(e) + " NUMERIC\n"
+
+  arff += "\n@data\n"
+
+  for e in vol:
+      arff += ",".join([str(n) for n in e]) + "\n"
+
+  return arff
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+@relation gruas
+@attribute Speed NUMERIC
+@attribute Angle NUMERIC
+@attribute Power NUMERIC
+
+@data
+1,-5,0.3
+2,5,0.3
+3,-2,0.5
+1,2,0.5
+2,0,0.7
+6,-5,0.5
+7,5,0.5
+6,-2,0.3
+7,2,0.3
+6,0,0.7
+8,-5,0.5
+9,5,0.5
+10,-2,0.3
+8,2,0.3
+9,0,0.5
+#+end_example
