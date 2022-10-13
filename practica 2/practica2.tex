@@ -1,0 +1,84 @@
+% Created 2022-09-08 jue 13:18
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Luis Eduardo Galindo Amaya (1274895)}
+\date{2022-09-08}
+\title{Intervalos de confianza}
+\hypersetup{
+ pdfauthor={Luis Eduardo Galindo Amaya (1274895)},
+ pdftitle={Intervalos de confianza},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.1.9)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Bicicleta dias}
+\label{sec:org33b570b}
+\subsection{Temp}
+\label{sec:orgb74d293}
+podemos notar como la temperatura, no varia mucho en sus limites, ya que el rango de la variable es bastante pequeño por lo que reducirlo en un 10\% no tiene ningun efecto significativo.
+
+\begin{description}
+\item[{90\%}] 0,48 (límite inferior) a 0,51 (límite superior)
+\item[{95\%}] 0,48 (límite inferior) a 0,51 (límite superior)
+\item[{99\%}] 0,48 (límite inferior) a 0,51 (límite superior)
+\end{description}
+
+\section{Bicicleta horas}
+\label{sec:org2654fc8}
+\subsection{temp}
+\label{sec:org49729b7}
+Igual que en el dataset anterior no hay tanta varianza con los datos obtenidos previamente, son tan pequeños que los valores no se ven afectados en lo mas minimo.
+
+\begin{description}
+\item[{90\%}] 0,49 (límite inferior) a 0,50 (límite superior)
+\item[{95\%}] 0,49 (límite inferior) a 0,50 (límite superior)
+\item[{99\%}] 0,49 (límite inferior) a 0,50 (límite superior)
+\end{description}
+
+\section{Ejemplo 62}
+\label{sec:orgb417538}
+\subsection{voltaje}
+\label{sec:org8d53fd6}
+El rango de la variable se expande mientras incrementamo el intervalo de confianza, tomando los dato que anteriormente anteriormente habriamos ignorado. Este dataser es lo suficientemente extenzo para notar cambios significartivos en los valores de las variables.
+
+\begin{description}
+\item[{90\%}] 27,23 (límite inferior) a 28,36 (límite superior)
+\item[{95\%}] 27,11 (límite inferior) a 28,48 (límite superior)
+\item[{99\%}] 26,86 (límite inferior) a 28,73 (límite superior)
+\end{description}
+
+\section{Gruas, dataset descargado}
+\label{sec:orgba73ae7}
+\subsection{Speed}
+\label{sec:org2ac57de}
+En este caso el dataset es muy pequeño pero con una varianza muy alta, por lo que los datos si se modifican muy significativamente al cambiar el intervalo de confianza.  
+
+\begin{description}
+\item[{90\%}] 4,26 (límite inferior) a 7,07 (límite superior)
+\item[{95\%}] 3,96 (límite inferior) a 7,38 (límite superior)
+\item[{99\%}] 3,29 (límite inferior) a 8,04 (límite superior)
+\end{description}
+
+\section{Conclusiones}
+\label{sec:orged56640}
+Cuando incrementamos el rango de confianza abarcamos mas espacio de la distribución por lo que el rango se hace mas amplio, al eliminar los casos mas excepcionales de la distribución podemos obtener los eventos que se repiten con mas frecuencia.
+\end{document}

@@ -1,0 +1,48 @@
+
+#+TITLE:  Regresión lineal múltiple
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   29-09-2022
+
+#+MACRO:  tagline  Práctica 6
+#+INCLUDE: "../includes/template.org"
+#+OPTIONS: ^:nil
+
+* Informacion del dataset[fn:origen]
+** Breast Cancer Wisconsin (Diagnostic)
+- 1. ID number
+- 2. Diagnosis (M = malignant, B = benign)
+
+** Ten real-valued features are computed for each cell nucleus:
+- 3. radius (mean of distances from center to points on the perimeter)
+- 4. texture (standard deviation of gray-scale values)
+- 5. perimeter
+- 6. area
+- 7. smoothness (local variation in radius lengths)
+- 8. compactness (perimeter^2 / area - 1.0)
+- 9. concavity (severity of concave portions of the contour)
+- 10. concave points (number of concave portions of the contour)
+- 11. symmetry 
+- 12. fractal dimension ("coastline approximation" - 1)
+
+[fn:origen] https://archive-beta.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+diagnostic
+
+* Explicación del problema y solución
+** Problema
+#+BEGIN_mdframed
+Se desea conocer si existe alguna relación entre las dimensiones y la textura de un tumor. Se puede determinar mediante un modelo lineal si un tumor mas grande tiene mas textura[fn:text].
+#+END_mdframed
+
+[fn:text] Desviación estándar de los valores de la vista.
+
+** Solución
+Las variables evaluadas corresponden a el radio, la textura, perímetro, área y suavidad. Podemos determinar en base a la regresión NO existe una relación entre las dimensiones y las texturas del tumor, los datos están demasiado dispersos para que la linealidad sea significativa. 
+
+#+caption: Resultados de la regrecion lineal múltiple.
+[[file:img/rp2.jpeg]]
+
+* Ejemplo de regrecion lineal múltiple[fn:bolsadevalores]
+{{{code(./src/ejemplo.R)}}}
+
+[fn:bolsadevalores] https://archive.ics.uci.edu/ml/datasets/ISTANBUL+STOCK+EXCHANGE
+
+

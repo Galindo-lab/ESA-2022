@@ -180,3 +180,14 @@ una estimación puntual de un parámetro \(\theta\) es un numero único que pued
 8,2,0.3
 9,0,0.5
 #+end_example
+* mié 07 sep 2022 12:13:36
+** TODO Inferencia estadistica: Estimación por intervalo
+** TODO Prueba de hipótesis
+*** hipostesis nula 
+*** Inferencia relacionada con la media 
+* mié 14 sep 2022 12:10:32
+** regresión con minimos cuadrados en R
+
+
+
+

@@ -1,0 +1,96 @@
+#+TITLE:  Regresión simple en R
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   21-09-2022
+
+#+MACRO:  tagline  Reporte 4
+#+include: "../includes/template.org"
+
+#+BEGIN_SRC R
+
+  x=c(1,2,3,4,5,6,7,8,9,10)
+  y=c(34,36,19,20,22,20,19,13,15,16)
+  datos=data.frame(x,y)
+  datos
+  regresion = lm(datos)
+
+  par(mfrow=c(3,1))
+  plot(datos)
+
+  b=regresion$coefficients[1]
+  m=regresion$coefficients[2]
+  b
+  m
+
+  yr=m*x+b
+  yr
+  datos_r=data.frame(x,yr)
+  datos_r
+  plot(datos_r,type="l")
+
+  y_minimos=-0.496*x+24.128
+  y_minimos
+  datos_minimos=data.frame(x,y_minimos)
+  plot(datos_minimos,type="l")
+
+#+END_SRC
+
+#+BEGIN_SRC R
+
+  x=c(1,2,3,4,5,6,7,8,9,10)
+  y=c(34,36,19,20,22,20,19,13,15,16)
+  datos=data.frame(x,y)
+  datos
+  regresion = lm(datos)
+
+
+  par(mfrow=c(3,1))
+  plot(datos)
+
+  b=regresion$coefficients[1]
+  m=regresion$coefficients[2]
+  b
+  m
+
+  ## modelos (datos conocidos)
+  yr=m*x+b
+  yr
+  datos_r=data.frame(x,yr)
+  datos_r
+  plot(datos_r,type="l")
+
+
+  ## prediccion (datos futuros)
+  x_pred = 11:15
+  yr = m*x_pred+b
+
+
+  datos_p = data.frame(x_pred, yr)
+  datos_p
+  plot(datos_p, type="l")
+#+END_SRC
+
+#+BEGIN_SRC R
+
+  archivo = read.csv("bike_day.txt", nrows=350)
+
+  x = archivo[1]
+  y = archivo[14]
+
+  datos = data.frame(x,y)
+  datos
+  regresion = lm(datos)
+
+  par(mfrow = c(2,1))
+  plot(datos)
+
+  b= regresion$coefficients[1]
+  m = regresion$coefficients[2]
+  b
+  m
+
+  yr = m * x + b
+  yr
+  datos_r = data.frame(x,yr)
+  datos_r
+  plot(datos_r, type="l")
+#+END_SRC

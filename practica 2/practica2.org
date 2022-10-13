@@ -1,0 +1,71 @@
+#+TITLE:  Intervalos de confianza
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   2022-09-08
+
+# #+MACRO:  tagline    
+# #+include: "../includes/template.org"
+
+* Bicicleta dias
+# ** Instant
+# - 90% :: 353,15 (límite inferior) a 378,85 (límite superior)
+# - 95% :: 350,69 (límite inferior) a 381,31 (límite superior)
+# - 99% :: 345,88 (límite inferior) a 386,12 (límite superior)
+
+** Temp 
+podemos notar como la temperatura, no varia mucho en sus limites, ya que el rango de la variable es bastante pequeño por lo que reducirlo en un 10% no tiene ningun efecto significativo.
+
+- 90% :: 0,48 (límite inferior) a 0,51 (límite superior)
+- 95% :: 0,48 (límite inferior) a 0,51 (límite superior)
+- 99% :: 0,48 (límite inferior) a 0,51 (límite superior)
+
+# ** hum
+# - 90% :: 0,62 (límite inferior) a 0,64 (límite superior)
+# - 95% :: 0,62 (límite inferior) a 0,64 (límite superior)
+# - 99% :: 0,61 (límite inferior) a 0,64 (límite superior)
+
+* Bicicleta horas 
+# ** Instant
+# - 90% :: 8.627,40 (límite inferior) a 8.752,60 (límite superior)
+# - 95% :: 8.615,41 (límite inferior) a 8.764,59 (límite superior)
+# - 99% :: 8.591,97 (límite inferior) a 8.788,03 (límite superior)
+
+** temp
+Igual que en el dataset anterior no hay tanta varianza con los datos obtenidos previamente, son tan pequeños que los valores no se ven afectados en lo mas minimo.
+
+- 90% :: 0,49 (límite inferior) a 0,50 (límite superior)
+- 95% :: 0,49 (límite inferior) a 0,50 (límite superior)
+- 99% :: 0,49 (límite inferior) a 0,50 (límite superior)
+
+# ** hum
+# - 90% :: 624,59 (límite inferior) a 629,41 (límite superior)
+# - 95% :: 624,13 (límite inferior) a 629,87 (límite superior)
+# - 99% :: 623,23 (límite inferior) a 630,77 (límite superior)
+
+* Ejemplo 62
+** voltaje
+El rango de la variable se expande mientras incrementamo el intervalo de confianza, tomando los dato que anteriormente anteriormente habriamos ignorado. Este dataser es lo suficientemente extenzo para notar cambios significartivos en los valores de las variables.
+
+- 90% :: 27,23 (límite inferior) a 28,36 (límite superior)
+- 95% :: 27,11 (límite inferior) a 28,48 (límite superior)
+- 99% :: 26,86 (límite inferior) a 28,73 (límite superior)
+
+* Gruas, dataset descargado
+** Speed
+En este caso el dataset es muy pequeño pero con una varianza muy alta, por lo que los datos si se modifican muy significativamente al cambiar el intervalo de confianza.  
+
+- 90% :: 4,26 (límite inferior) a 7,07 (límite superior)
+- 95% :: 3,96 (límite inferior) a 7,38 (límite superior)
+- 99% :: 3,29 (límite inferior) a 8,04 (límite superior)
+
+# ** Angle 
+# - 90% :: -1,60 (límite inferior) a 1,60 (límite superior)
+# - 95% :: -1,95 (límite inferior) a 1,95 (límite superior)
+# - 99% :: -2,71 (límite inferior) a 2,71 (límite superior)
+
+# ** Power
+# - 90% :: 0,38 (límite inferior) a 0,51 (límite superior)
+# - 95% :: 0,37 (límite inferior) a 0,53 (límite superior)
+# - 99% :: 0,37 (límite inferior) a 0,53 (límite superior)
+
+* Conclusiones 
+Cuando incrementamos el rango de confianza abarcamos mas espacio de la distribución por lo que el rango se hace mas amplio, al eliminar los casos mas excepcionales de la distribución podemos obtener los eventos que se repiten con mas frecuencia.
