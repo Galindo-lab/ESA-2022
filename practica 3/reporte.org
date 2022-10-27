@@ -87,12 +87,14 @@ Total Number of Instances               15
 #+ATTR_LATEX: :width 10cm
 [[file:img/3.png]]
 
-* Código para regrecion linel simple en R
+* Código para regrecion lineal simple en R
 #+BEGIN_SRC R
   ## Eje x
-  x = c(1:10)
+  x = c(1:7)
   ## Eje Y
   y = c(34, 36, 19, 20, 22, 20, 19, 13, 15, 16)
+  ## y = c(19,18,22, 25,19,28,30)
+
   n = length(y)
 
   if( length(y) != length(x) ) {

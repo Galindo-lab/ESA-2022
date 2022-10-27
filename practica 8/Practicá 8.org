@@ -1,0 +1,51 @@
+#+TITLE:  Cálculo de Ji cuadrada en R
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   27-10-2022
+
+#+MACRO:  tagline  Práctica 8
+#+INCLUDE: "../includes/template.org"
+#+OPTIONS: ^:nil
+
+* Información del dataset[fn:origen]
+This is one of the best known datasets in statistics and machine learning.  Fisher's paper is a classic in the field and is frequently used for tutorial and teaching purposes. The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.  One class is linearly separable from the other 2; the latter are not linearly separable from each other.
+
+Predicted attribute: class of iris plant.
+
+[fn:origen] https://archive-beta.ics.uci.edu/ml/datasets/iris
+
+** Attribute information:
+- 1. sepal length in cm
+- 2. sepal width in cm
+- 3. petal length in cm
+- 4. petal width in cm
+- 5. class: 
+   + Iris Setosa
+   + Iris Versicolour
+   + Iris Virginica
+
+* Practica 
+- Comprender el código de la última diapositiva del Parcial II
+- Tomar como base ese código para calcular el estadístico Ji cuadrada con otra base de datos
+- Hacer un reporte que contenga el código adaptado y corregido si es necesario y capturas de pantalla de los resultados
+
+* Capturas
+
+#+ATTR_HTML:
+#+ATTR_LATEX:
+#+CAPTION: p-value = 0.8722
+[[file:img/1.png]]
+
+#+ATTR_HTML:
+#+ATTR_LATEX:
+#+CAPTION: p-value = 0.7644
+[[file:img/2.png]]
+
+#+ATTR_HTML:
+#+ATTR_LATEX:
+#+CAPTION: p-value = 0.8659
+[[file:img/3.png]]
+
+\pagebreak
+
+* Código
+{{{code(./ji.R)}}}
