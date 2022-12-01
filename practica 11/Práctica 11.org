@@ -1,0 +1,64 @@
+#+TITLE:  Prueba de normalidad analítica
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   23-11-2022
+
+#+MACRO:  tagline  Práctica 11
+#+INCLUDE: "../includes/template.org"
+#+STARTUP: truncate
+#+OPTIONS: ^:nil
+
+* Información del dataset[fn:origen]
+This is one of the best known datasets in statistics and machine learning.  Fisher's paper is a classic in the field and is frequently used for tutorial and teaching purposes. The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.  One class is linearly separable from the other 2; the latter are not linearly separable from each other.
+
+Predicted attribute: class of iris plant.
+
+1. sepal length
+2. sepal width
+3. petal length
+4. petal width
+5. class
+
+[fn:origen] https://archive-beta.ics.uci.edu/ml/datasets/iris
+
+* Desarollo de la práctica
+** Distribusion normal (sepal width)
+*** Observacion previa
+Se puede notar como el ancho del sépalo se distribuye de manera normal, el tamaño del sépalo tiende a ser de un tamaño especifico y no tanto del tamaño de los pétalos 
+
+*** Resultados
+Efectivamente los valores coinciden en una distribucion normal \(RQ = 0.9925113\).
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 7cm
+#+CAPTION: columna ''sepal width'' 
+[[file:img/i1.jpeg]]
+
+** Distribucion no normal (sepal length)
+*** Observacion previa
+El largo del sépalo se distribuye de manera serrada sobre los datos, no parece haber un patrón en la gráfica
+
+*** Resultados
+Aunque de a primera vista no es muy claro los datos de esta columna tambien cumplen la prueba de normalidad \(rQ = 0.9891878\).
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 7cm
+#+CAPTION: columna ''sepal length'' del dataset bezdekIris
+[[file:img/i2.jpeg]]
+
+** Distribucion no normal (petal length)
+*** Observacion previa
+Por otro lado el largo de los pétalos es muy interesante, en la parte derecha parece haber una distribución normal pero tiene unos sectores que sobresalen a la izquierda.
+
+*** Resultados
+Esta no es una distribución normal, la gráfica sale completamente dividida \(rQ = 0.9378633\)
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 7cm
+#+CAPTION: columna ''petal length'' del dataset bezdekIris
+[[file:img/i3.jpeg]]
+
+* Conclusiones 
+Usar métodos que solo dependen de la observación es bastante peligroso, ya que no podemos determinar con total precisión si nuestras gráficas coinciden o no y que un simple cambio en el numero de clases puede hacer que la gráfica sea completamente diferente, el método analítico nos permite tener mucha precisión para determinar si nuestros casos coinciden
+
+* Código
+{{{code(./pruebaDeNormalidad.R)}}}

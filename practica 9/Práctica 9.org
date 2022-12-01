@@ -1,0 +1,86 @@
+
+#+TITLE:  Cálculo de C cuantil
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   03-11-2022
+
+#+MACRO:  tagline  notas
+#+INCLUDE: "../includes/template.org"
+#+OPTIONS: ^:nil
+
+* Ejercicio de calificaciones
+** Calcule
+El cuartil 0.65 y El cuatil 0.42
+  
+- 1 :: Ordenar el arreglo de forma asenente
+- 2 :: \(c' = 0,65 + 20 = 13\) y \(c' = 0,42 + 20 = 8,4\)
+- 3 :: \(Ccuantil = \frac{x'_{13} + x'_{14}}{2} = \frac{84+84}{2} = 84 \) y \(Ccuantil = \left| 84 \right| + 1 = c9 = 69 \)
+
+** Solucion
+- a) El 65% de las calificaciones està por debajo del 84.
+- b) El 42% de las calificaciones està por debajo del 69.
+
+** Programa
+#+BEGIN_SRC R
+
+  ## cuartil de interes
+  cuartil_de_interes <- 0.42
+
+  ## datos
+  x <- c(
+    45, 69, 79, 83, 38, 27, 98, 100, 84, 79, 67, 84, 92, 35, 56, 69,
+    47, 95, 100, 86
+  )
+
+  ## ordenar los datos
+  x <- sort(x)
+
+  ## cuartil
+  c <- cuartil_de_interes * length(x)
+
+  # check fractional part
+  Ccuartil <- if (c %% 1 == 0) {
+    ## formula para enteros
+    (x[c] + x[c + 1]) / 2
+  } else {
+    ## formula para flotantes
+    x[floor(c) + 1]
+  }
+
+  Ccuartil
+#+END_SRC
+
+\pagebreak
+
+* Informacion del Dataset 
+** Real estate valuation data[fn:origen2]
+- 1. id
+- 2. the transaction date (for example, 2013.250=2013 March, 2013.500=2013 June, etc.)
+- 3. the house age (unit: year)
+- 4. the distance to the nearest MRT station (unit: meter)
+- 5. the number of convenience stores in the living circle on foot (integer)
+- 6. the geographic coordinate, latitude. (unit: degree)
+- 7. the geographic coordinate, longitude. (unit: degree)
+- 8. house price of unit area
+
+[fn:origen2] https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set
+
+* Resultados
+Se utiliaron los datos de la columnas 3 (the house age (años) y 4 (distancia a una estacion MRT)
+de todas las casas en el dataset se determino que la mitad de ellas: tienen menos de *16 años* de 
+que fueron contruidas y estan a menos de 492.23 metros de distancia de una  estacion de MRT[fn:mrt].
+
+[fn:mrt] Metro.
+
+* Código
+{{{code(./cuartiles.R)}}}
+
+* Capturas 
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 10cm
+#+CAPTION: Programa mostrando el cuatil .50 mostrando la antigüedad de las casas.
+[[file:img/1.png]]
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 10cm
+#+CAPTION: Programa mostrando la distancia promedio a la estacion MRT más cercana.
+[[file:img/2.png]]

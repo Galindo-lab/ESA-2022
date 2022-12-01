@@ -1,0 +1,67 @@
+#+TITLE:  Prueba de normalidad
+#+AUTHOR: Luis Eduardo Galindo Amaya (1274895)
+#+DATE:   16-11-2022
+
+#+MACRO:  tagline  Práctica 10
+#+INCLUDE: "../includes/template.org"
+#+OPTIONS: ^:nil
+
+* Información del dataset[fn:origen]
+This is one of the best known datasets in statistics and machine learning.  Fisher's paper is a classic in the field and is frequently used for tutorial and teaching purposes. The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.  One class is linearly separable from the other 2; the latter are not linearly separable from each other.
+
+Predicted attribute: class of iris plant.
+
+[fn:origen] https://archive-beta.ics.uci.edu/ml/datasets/iris
+
+* Desarollo de la práctica
+** 1. Probar el código proporcionado en recursos para la prueba de normalidad, cambiando el número de clases a 5, 6, 8 y 10
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 5cm
+#+CAPTION: 5 clases
+[[file:img/e1.jpeg]]
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 5cm
+#+CAPTION: 6 clases 
+[[file:img/e2.jpeg]]
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 5cm
+#+CAPTION: 8 clases 
+[[file:img/e3.jpeg]]
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 5cm
+#+CAPTION: 10 clases 
+[[file:img/e4.jpeg]]
+
+** 2. Probar este código adaptándolo al menos hasta encontrar alguna que muestre evidencia de distribución normal
+
+Se puede notar como el ancho del sépalo se distribuye de manera normal, el tamaño del sépalo tiende a ser de un tamaño especifico y no tanto del tamaño de los pétalos 
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 7cm
+#+CAPTION: columna ''sepal width'' del dataset bezdekIris
+[[file:img/iris.jpeg]]
+
+** 3. Reportar en un documento todos los resultados obtenidos aún que el comportamiento de los datos no de evidencia de distribución normal 
+
+El largo del sépalo se distribuye de manera serrada sobre los datos, no parece haber un patrón en la gráfica
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 7cm
+#+CAPTION: columna ''sepal length'' del dataset bezdekIris
+[[file:img/iris0.jpeg]]
+
+Por otro lado el largo de los pétalos es muy interesante, en la parte derecha parece haber una distribución normal pero tiene unos sectores que sobresalen a la izquierda.
+
+#+ATTR_HTML:
+#+ATTR_LATEX: :width 7cm
+#+CAPTION: columna ''petal length'' del dataset bezdekIris
+[[file:img/iris1.jpeg]]
+
+\pagebreak
+
+* Código
+{{{code(./pruebaDeNormalidad.R)}}}

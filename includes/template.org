@@ -1,6 +1,6 @@
 
 #+LATEX_CLASS: article
-#+LATEX_CLASS_OPTIONS: [12pt]
+#+LATEX_CLASS_OPTIONS: [10pt]
 #+OPTIONS: \n:nil num:nil toc:nil title:nil
 
 # Ajustar el lenguaje de babel ------------------------------------------------
@@ -27,11 +27,13 @@
 #+LATEX_HEADER: \lstdefinestyle{mystyle}{
 #+LATEX_HEADER:    numbers=left,
 #+LATEX_HEADER:    showspaces=false,
-#+LATEX_HEADER:    frame=leftline,
+#+LATEX_HEADER:    frame=single,
 #+LATEX_HEADER:    showspaces=false,
-#+LATEX_HEADER:    showstringspaces=false,
-#+LATEX_HEADER:    showtabs=false,
+#+LATEX_HEADER:    showstringspaces=false, 
+#+LATEX_HEADER:    showtabs=false, 
 #+LATEX_HEADER:    numberstyle=\tiny,
+#+LATEX_HEADER:    aboveskip=\parskip,
+#+LATEX_HEADER:    basicstyle=\ttfamily\footnotesize
 #+LATEX_HEADER: }
 
 #+LATEX_HEADER: \lstset{
